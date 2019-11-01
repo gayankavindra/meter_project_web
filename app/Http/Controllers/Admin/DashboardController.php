@@ -289,7 +289,7 @@ class DashboardController extends Controller
         ]);
        $payment=new Payment([
         `accountno` => $request->get('accountno'),
-        `billid`=> $request->get('billid`'),
+        `billid`=> $request->get('billid'),
         `payment`=> $request->get('payment'),
          `date` => $request->get('date')
        ]);
@@ -306,18 +306,74 @@ class DashboardController extends Controller
         ]);
        $account=new AccountInformation([
         `accountno` => $request->get('accountno'),
-        `consumername`=> $request->get('consumername`'),
+        `consumername`=> $request->get('consumername'),
         `contact`=> $request->get('contact'),
          `Address` => $request->get('address'),
          `totaldueamount` => $request->get('totaldueamount'),
          `nic` => $request->get('nic')
        ]);
-       dd($account);
-       //$payment->save();
+      // dd($account);
+       $payment->save();
        
-       // return redirect('/payment')->with('status','Your data is added');
+        return redirect('/AccountInformation')->with('status','Your data is added');
     }
 
+    public function consumersave(Request $request){   
+        // INSERT INTO `payments` (`id`, `accountno`, `billid`, `payment`, `date`, `created_at`, `updated_at`) VALUES (NULL, '344', '311', '750', '2019-10-01', NULL, NULL);
+        $this->validate($request,[
+            'nic' =>'required'
+        ]);
+       $account=new Consumer([
+        `nic` => $request->get('accountno'),
+        `consumername`=> $request->get('consumername'),
+        `contact`=> $request->get('contact'),
+         `Address` => $request->get('address'),
+         `totaldueamount` => $request->get('totaldueamount'),
+         `email` => $request->get('email')
+       ]);
+      // dd($account);
+       $payment->save();
+       
+        return redirect('/consumerdetails')->with('status','Your data is added');
+    }
+
+
+    public function billhistorysave(Request $request){   
+        // INSERT INTO `payments` (`id`, `accountno`, `billid`, `payment`, `date`, `created_at`, `updated_at`) VALUES (NULL, '344', '311', '750', '2019-10-01', NULL, NULL);
+        $this->validate($request,[
+            'accountno' =>'required'
+        ]);
+       $payment=new BillHistory([
+        `accountno` => $request->get('accountno'),
+        `billvalue`=> $request->get('billvalue'),
+        `month`=> $request->get('month'),
+         `date` => $request->get('date'),
+         `nic` => $request->get('nic'),
+         `contact` => $request->get('contact')
+       ]);
+       //dd($payment);
+       $payment->save();
+       
+        return redirect('/BillHistory')->with('status','Your data is added');
+    }
+
+    public function metersave(Request $request){   
+        // INSERT INTO `payments` (`id`, `accountno`, `billid`, `payment`, `date`, `created_at`, `updated_at`) VALUES (NULL, '344', '311', '750', '2019-10-01', NULL, NULL);
+        $this->validate($request,[
+            'accountno' =>'required'
+        ]);
+       $payment=new meter([
+        `accountno` => $request->get('accountno'),
+        `Current_reading`=> $request->get('Current_reading'),
+        `month`=> $request->get('month'),
+         `date` => $request->get('date')
+         
+       ]);
+       //dd($payment);
+       $payment->save();
+       
+        return redirect('/meterreading')->with('status','Your data is added');
+    }
 
 
 

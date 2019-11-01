@@ -22,7 +22,7 @@ Add new Meter Reading
                     </div>
                         <div class="col-md-6">
                             
-                             <form method="post" action="/payment-save" >
+                             <form method="post" action="/meter-save" >
                                 
                              {{csrf_field()}}
                            
@@ -32,13 +32,13 @@ Add new Meter Reading
                                 </div>
 
                                 <div class="form-group">
-                                    <label>Bill ID</label>
-                                    <input type="text" name="billid"  class="form-control">
+                                    <label>Month</label>
+                                    <input type="text" name="month"  class="form-control">
                                 </div>
 
                                 <div class="form-group">
-                                    <label>Paid value</label>
-                                    <input type="text" name="payment"  class="form-control">
+                                    <label>Current Reading</label>
+                                    <input type="text" name="Current_reading"  class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label>Date</label>

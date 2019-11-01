@@ -22,27 +22,35 @@ Add new Consumer
                     </div>
                         <div class="col-md-6">
                             
-                             <form method="post" action="/payment-save" >
+                             <form method="post" action="/consumer-save" >
                                 
                              {{csrf_field()}}
                            
                                 <div class="form-group ">
-                                    <label>Account No</label>
-                                    <input type="text" name="accountno"  class="form-control">
+                                    <label>Consumer Name</label>
+                                    <input type="text" name="consumername"  class="form-control">
                                 </div>
 
                                 <div class="form-group">
-                                    <label>Bill ID</label>
-                                    <input type="text" name="billid"  class="form-control">
+                                    <label>NIC</label>
+                                    <input type="text" name="nic"  class="form-control">
                                 </div>
 
                                 <div class="form-group">
-                                    <label>Paid value</label>
-                                    <input type="text" name="payment"  class="form-control">
+                                    <label>E mail</label>
+                                    <input type="text" name="email"  class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <label>Date</label>
-                                    <input type="date" name="date"  class="form-control">
+                                    <label>Contact</label>
+                                    <input type="text" name="contact"  class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Address</label>
+                                    <input type="text" name="Address"  class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Total due amount</label>
+                                    <input type="text" name="totaldueamount"  class="form-control">
                                 </div>
 
                                 

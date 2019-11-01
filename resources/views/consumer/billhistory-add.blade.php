@@ -1,4 +1,4 @@
-@extends('layouts.masterconsumer')
+@extends('layouts.master')
 
 
 @section('title')
@@ -22,7 +22,7 @@ Add new Bill
                     </div>
                         <div class="col-md-6">
                             
-                             <form method="post" action="/payment-save" >
+                             <form method="post" action="/billhistory-save" >
                                 
                              {{csrf_field()}}
                            
@@ -32,22 +32,26 @@ Add new Bill
                                 </div>
 
                                 <div class="form-group">
-                                    <label>Bill ID</label>
-                                    <input type="text" name="billid"  class="form-control">
+                                    <label>Bill value</label>
+                                    <input type="text" name="billvalue"  class="form-control">
                                 </div>
 
                                 <div class="form-group">
-                                    <label>Paid value</label>
-                                    <input type="text" name="payment"  class="form-control">
+                                    <label>Month</label>
+                                    <input type="text" name="month"  class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <label>Date</label>
-                                    <input type="date" name="date"  class="form-control">
+                                    <label>NIC</label>
+                                    <input type="text" name="nic"  class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Contact</label>
+                                    <input type="text" name="contact"  class="form-control">
                                 </div>
 
                                 
                                 <button type="submit" class="btn btn-success">Add</button>
-                                <a href="/payment" class="btn btn-danger">Cancel</a>
+                                <a href="/BillHistory" class="btn btn-danger">Cancel</a>
 
                             </form> 
 

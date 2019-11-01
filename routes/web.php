@@ -663,15 +663,22 @@ Route::group(['middleware'=>'App\Http\Middleware\ConsumerMiddleware'],function()
      return view('consumer.account-add');
  });
  Route::post('/account-save','Admin\DashboardController@accountsave');
+
  Route::get('/consumer-add',function () {
      return view('consumer.consumer-add');
  });
+ Route::post('/consumer-save','Admin\DashboardController@consumersave');
+
  Route::get('/Billhistory-add',function () { 
      return view('consumer.Billhistory-add');
  });
+ Route::post('/billhistory-save','Admin\DashboardController@billhistorysave');
+
  Route::get('/meter-add',function () { 
      return view('consumer.meter-add');
  });
+ Route::post('/meter-save','Admin\DashboardController@metersave');
+
 
 
 
