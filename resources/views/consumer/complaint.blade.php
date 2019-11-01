@@ -1,4 +1,4 @@
-@extends('layouts.masterforconsumer')
+@extends('layouts.masterconsumer')
 
 
 @section('title')
@@ -47,12 +47,12 @@ View Complaints
                 <td>{{$complaint->id}}</td>
                 <td>{{$complaint->accountNo}}</td>
                 <td>{{$complaint->complaint}}</td>
-                @if($complaint->iscompleted){
+                @if($complaint->iscompleted)
                 <td><button class="btn btn-success">Completed</td>
-                }
-                @else{
+                
+                @else
                   <td><button class="btn btn-warning">Not Completed</td>
-                }
+                
                 @endif
                 </tr>
                 @endforeach

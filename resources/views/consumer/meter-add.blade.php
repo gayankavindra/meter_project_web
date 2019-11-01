@@ -2,7 +2,7 @@
 
 
 @section('title')
-Edit Payment
+Add new Meter Reading
 @endsection
 
 @section('content')
@@ -12,7 +12,7 @@ Edit Payment
             <div class="card">
               <div class=="card-header ">
               <br>
-                  <h3 class="text-center">Edit Meter Readings</h3>
+                  <h3 class="text-center">Add new Meter Reading</h3>
               </div>
                 <div class="card-body text-center">
 
@@ -22,33 +22,32 @@ Edit Payment
                     </div>
                         <div class="col-md-6">
                             
-                             <form action="/payment-update/{{$ar->id}}" method="POST">
+                             <form method="post" action="/payment-save" >
                                 
-                                {{csrf_field()}}
-                                {{method_field('PUT')}}
-
+                             {{csrf_field()}}
+                           
                                 <div class="form-group ">
                                     <label>Account No</label>
-                                    <input type="text" name="accountno" value="{{$ar->accountno}}" class="form-control">
+                                    <input type="text" name="accountno"  class="form-control">
                                 </div>
 
                                 <div class="form-group">
                                     <label>Bill ID</label>
-                                    <input type="text" name="billid" value="{{$ar->billid}}" class="form-control">
+                                    <input type="text" name="billid"  class="form-control">
                                 </div>
 
                                 <div class="form-group">
                                     <label>Paid value</label>
-                                    <input type="text" name="payment" value="{{$ar->payment}}" class="form-control">
+                                    <input type="text" name="payment"  class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label>Date</label>
-                                    <input type="text" name="date" value="{{$ar->date}}" class="form-control">
+                                    <input type="date" name="date"  class="form-control">
                                 </div>
 
                                 
-                                <button type="submit" class="btn btn-success">Update</button>
-                                <a href="/payment" class="btn btn-danger">Cancel</a>
+                                <button type="submit" class="btn btn-success">Add</button>
+                                <a href="/meterreading" class="btn btn-danger">Cancel</a>
 
                             </form> 
 

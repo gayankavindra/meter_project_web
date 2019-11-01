@@ -2,7 +2,7 @@
 
 
 @section('title')
-Edit Registered Roles
+Edit Meter Reading
 @endsection
 
 @section('content')

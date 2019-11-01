@@ -29,15 +29,15 @@ class LoginController extends Controller
     //protected $redirectTo = '/home';
     protected function redirectTo(){
         if(Auth::user()->usertype=='admin'){
-           // return 'dashboard';
+           // return 'admindashboard';
            return 'home';
         }
         else if(Auth::user()->usertype=='super admin'){
-            //return 'dashboard';
+            return 'admindashboard';
             return 'home';
         }
         else if(Auth::user()->usertype=='consumer'){
-            //return 'consumerdashboard';
+           // return 'dashboard';
             return 'home';
         }
         

@@ -49,7 +49,15 @@
           Consumer Dashboard
         </a>
       </div>
-      <div class="sidebar-wrapper" id="sidebar-wrapper">
+
+
+
+
+
+
+
+
+      <!-- <div class="sidebar-wrapper" id="sidebar-wrapper">
         <ul class="nav">
           <li class="{{'dashboard'== request()->path()?'active':''}} ">
             <a href="/dashboard">
@@ -77,12 +85,12 @@
             </a>
           </li>
           <li>
-          <!-- <li class="{{'role-register'== request()->path()?'active':''}} ">
+          <li class="{{'role-register'== request()->path()?'active':''}} ">
             <a href="/role-register">
               <i class="now-ui-icons users_single-02"></i>
               <p>User Profile</p>
             </a>
-          </li> -->
+          </li> 
           <li class="{{'view-complaints'== request()->path()?'active':''}} ">
             <a href="/view-complaint">
               <i class="now-ui-icons design_bullet-list-67"></i>
@@ -103,7 +111,80 @@
             </a>
           </li>
         </ul>
+      </div> -->
+      <div class="sidebar-wrapper" id="sidebar-wrapper">
+        <ul class="nav">
+          <li class=" {{'dashboard'== request()->path()?'active':''}} ">
+            <a href="/dashboard">
+              <i class="now-ui-icons files_box"></i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+          <li class="{{'AccountInformation'== request()->path()?'active':''}}">
+            <a href="/AccountInformation">
+              <i class="now-ui-icons business_bulb-63"></i>
+              <p>Account Information</p>
+            </a>
+          </li>
+          <li class="{{'consumerdetails'== request()->path()?'active':''}} ">
+            <a href="/consumerdetails">
+              <i class="now-ui-icons users_single-02"></i>
+              <p>Consumer Details</p>
+            </a>
+          </li>
+          <li>
+          <li class="{{'BillHistory'== request()->path()?'active':''}} ">
+            <a href="/BillHistory">
+              <i class="now-ui-icons files_paper"></i>
+              <p>Bill History</p>
+            </a>
+          </li>
+          <li>
+          <li class="{{'role-register'== request()->path()?'active':''}} ">
+            <a href="/role-register">
+              <i class="now-ui-icons tech_laptop"></i>
+              <p>User Profile</p>
+            </a>
+          </li>
+          <li class="{{'view-complaints'== request()->path()?'active':''}} ">
+            <a href="/view-complaints">
+              <i class="now-ui-icons ui-1_zoom-bold"></i>
+              <p>View Complaints</p>
+            </a>
+          </li>
+          <li>
+          <li class="{{'meterreading'== request()->path()?'active':''}} ">
+            <a href="/meterreading">
+              <i class="now-ui-icons education_glasses"></i>
+              <p>Meter Readings</p>
+            </a>
+          </li>
+          <li class="{{'payment'== request()->path()?'active':''}} ">
+            <a href="/payment">
+              <i class="now-ui-icons business_money-coins"></i>
+              <p>Payments</p>
+            </a>
+          </li>
+          <li class="{{'area'== request()->path()?'active':''}} ">
+            <a href="/area">
+              <i class="now-ui-icons location_map-big"></i>
+              <p>CEB Areas</p>
+            </a>
+          </li>
+          <!-- <li class="active-pro">
+            <a href="">
+              <i class="now-ui-icons arrows-1_cloud-download-93"></i>
+              <p>SE/2014/02</p>
+            </a>
+          </li> -->
+        </ul>
       </div>
+    </div>
+
+
+
+
+      
     </div>
 
 

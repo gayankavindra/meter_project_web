@@ -1,8 +1,8 @@
-@extends('layouts.master')
+@extends('layouts.masterconsumer')
 
 
 @section('title')
-Edit Payment
+Edit Meter Reading
 @endsection
 
 @section('content')
@@ -22,7 +22,7 @@ Edit Payment
                     </div>
                         <div class="col-md-6">
                             
-                             <form action="/payment-update/{{$ar->id}}" method="POST">
+                             <form action="/meter-update/{{$ar->id}}" method="POST">
                                 
                                 {{csrf_field()}}
                                 {{method_field('PUT')}}
@@ -33,13 +33,13 @@ Edit Payment
                                 </div>
 
                                 <div class="form-group">
-                                    <label>Bill ID</label>
-                                    <input type="text" name="billid" value="{{$ar->billid}}" class="form-control">
+                                    <label>Month</label>
+                                    <input type="text" name="month" value="{{$ar->month}}" class="form-control">
                                 </div>
 
                                 <div class="form-group">
-                                    <label>Paid value</label>
-                                    <input type="text" name="payment" value="{{$ar->payment}}" class="form-control">
+                                    <label>Meter reading</label>
+                                    <input type="text" name="meterreading" value="{{$ar->Current_reading}}" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label>Date</label>
@@ -48,7 +48,7 @@ Edit Payment
 
                                 
                                 <button type="submit" class="btn btn-success">Update</button>
-                                <a href="/payment" class="btn btn-danger">Cancel</a>
+                                <a href="/meterreading" class="btn btn-danger">Cancel</a>
 
                             </form> 
 

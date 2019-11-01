@@ -2,7 +2,7 @@
 
 
 @section('title')
-dashboard
+CEB areas
 @endsection
 
 @section('content')

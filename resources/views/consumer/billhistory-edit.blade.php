@@ -1,8 +1,8 @@
-@extends('layouts.master')
+@extends('layouts.masterconsumer')
 
 
 @section('title')
-Edit Payment
+Edit Registered Roles
 @endsection
 
 @section('content')
@@ -12,7 +12,7 @@ Edit Payment
             <div class="card">
               <div class=="card-header ">
               <br>
-                  <h3 class="text-center">Edit Meter Readings</h3>
+                  <h3 class="text-center">Edit Bill History</h3>
               </div>
                 <div class="card-body text-center">
 
@@ -22,33 +22,29 @@ Edit Payment
                     </div>
                         <div class="col-md-6">
                             
-                             <form action="/payment-update/{{$ar->id}}" method="POST">
+                             <form action="/billhistory-update/{{$bhe->id}}" method="POST">
                                 
                                 {{csrf_field()}}
                                 {{method_field('PUT')}}
 
                                 <div class="form-group ">
                                     <label>Account No</label>
-                                    <input type="text" name="accountno" value="{{$ar->accountno}}" class="form-control">
+                                    <input type="text" name="accountno" value="{{$bhe->accountno}}" class="form-control">
                                 </div>
 
                                 <div class="form-group">
-                                    <label>Bill ID</label>
-                                    <input type="text" name="billid" value="{{$ar->billid}}" class="form-control">
+                                    <label>Month</label>
+                                    <input type="text" name="month" value="{{$bhe->month}}" class="form-control">
                                 </div>
 
                                 <div class="form-group">
-                                    <label>Paid value</label>
-                                    <input type="text" name="payment" value="{{$ar->payment}}" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label>Date</label>
-                                    <input type="text" name="date" value="{{$ar->date}}" class="form-control">
+                                    <label>Bill value</label>
+                                    <input type="text" name="billvalue" value="{{$bhe->billvalue}}" class="form-control">
                                 </div>
 
                                 
                                 <button type="submit" class="btn btn-success">Update</button>
-                                <a href="/payment" class="btn btn-danger">Cancel</a>
+                                <a href="/BillHistory" class="btn btn-danger">Cancel</a>
 
                             </form> 
 

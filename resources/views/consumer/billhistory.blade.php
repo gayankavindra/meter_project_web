@@ -1,8 +1,8 @@
-@extends('layouts.master')
+@extends('layouts.masterconsumer')
 
 
 @section('title')
-Payment
+Bill History
 @endsection
 
 @section('content')
@@ -11,9 +11,7 @@ Payment
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                
-                <h4 class="card-title"> Payments</h4>
-              
+                <h4 class="card-title"> Bill History</h4>
                 @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
@@ -38,7 +36,7 @@ Payment
               @endforeach
 
               
-              <form method="post" action="/searchpayment">
+              <form method="post" action="/searchbill">
             
               {{csrf_field()}}
               <input type="text" class="form-control" name="AccountNo" placeholder="Enter Account No to search bill history ">
@@ -47,8 +45,8 @@ Payment
 
              
               <input type="submit" class="btn btn-success float-left" value="Search">
-              <a href="/payment" class="btn btn-default float-left">All Records</a> 
-              <a href="/payment-add" class="btn btn-info float-right"><i class="now-ui-icons ui-1_simple-add">&nbsp Add new payment</i></a>  
+              <a href="/BillHistory" class="btn btn-default float-left">All Records</a> 
+              <a href="/Billhistory-add" class="btn btn-info float-right"><i class="now-ui-icons ui-1_simple-add">&nbsp Add new Bill</i></a>  
                
               <br>
                    
@@ -60,32 +58,33 @@ Payment
                
                 <th> ID</th>
                 <th> Account No</th>
-                <th>Bill ID</th>
-                <th>Paid value</th>
-                <th> Date</th>
-                <!-- <th> contact</th> -->
+                <th>Month</th>
+                <th> Bill value</th>
+                <th> NIC</th>
+                <th> contact</th>
                 <th>Action</th>
                 
 
-                @foreach($payments as $bh)
+                @foreach($bill_Histories as $bh)
                 <tr>
                
                 <td>{{$bh->id}}</td>
                 <td>{{$bh->accountno}}</td>
-                <td>{{$bh->billid}}</td>
-                <td>{{$bh->payment}}</td>
-                <td>{{$bh->date}}</td>
-                
+                <td>{{$bh->month}}</td>
+                <td>{{$bh->billvalue}}</td>
+                <td>{{$bh->nic}}</td>
+                <td>{{$bh->contact}}</td>
                 <td>
 
                 
-                <form action="/payment-delete/{{$bh->id}}" method="POST">
-                <a href="/payment-edit/{{$bh->id}}"  class="btn btn-warning text-center"><i class="now-ui-icons design-2_ruler-pencil"></i> &nbsp Edit</a>
+                <form action="/billhistory-delete/{{$bh->id}}" method="POST">
+                <!-- <a href="" class="btn btn-info text-center"><i class="now-ui-icons ui-1_simple-add"></i></a>   -->
+                <a href="/bill-edit/{{$bh->id}}" class="btn btn-warning text-center"><i class="now-ui-icons design-2_ruler-pencil"></i>&nbsp Edit</a>
                 <!-- <a href="/billhistory-delete/{{$bh->id}}" class="btn btn-danger text-center"><i class="now-ui-icons ui-1_simple-remove"></i></a> -->
                 
                           {{csrf_field()}}
                           {{method_field('DELETE')}}                        
-                         <button type="submit" class="btn btn-danger"><i class="now-ui-icons ui-1_simple-remove"></i> &nbsp Delete</button>         
+                         <button type="submit" class="btn btn-danger"><i class="now-ui-icons ui-1_simple-remove"></i>&nbsp Delete</button>         
                 </form>
                 
                 </td>

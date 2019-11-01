@@ -2,17 +2,16 @@
 
 
 @section('title')
-dashboard
+CEB areas
 @endsection
 
 @section('content')
 
-  
-  <div class="row">
+   <div class="row">
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title"> Welcome to the Consumer Dashboard of Ceylon Electricity Board</h4>
+                <h4 class="card-title"> Area of Ceylon Electricity Board</h4>
               </div>
               <div class="card-body">
                 <!-- <div class="table-responsive">
@@ -133,7 +132,7 @@ dashboard
                     </tbody>
                   </table>
                 </div> -->
-                <img src="{{URL::to('assets/img/a.jpg')}}">
+                <img src="{{URL::to('assets/img/area.jpg')}}">
               </div>
             </div>
           </div>

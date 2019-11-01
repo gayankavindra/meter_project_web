@@ -46,8 +46,26 @@ View Complaints
               <!-- <a href="/view-complaints" class="float-right">All Records</a> -->
               <a href="/view-complaints" class="btn btn-default float-left">All Records</a> 
               
-              <!-- <input type="button" class="btn btn-warning" value="Clear"> -->
               </form>
+
+              <form method="post" action="/notcompleted">
+              {{csrf_field()}}
+              <input type="submit" class="btn btn-link float-right" value="Not Completed">
+              <!-- <a href="/view-complaints" class="btn btn-default float-right">Completed</a>  -->
+              </form>
+
+
+              <form method="post" action="/completed">
+              {{csrf_field()}}
+              <input type="submit" class="btn btn-link float-right" value="Completed">
+              <!-- <a href="/view-complaints" class="btn btn-default float-right">Completed</a>  -->
+              </form>
+
+
+             <!-- <a href="/view-complaints" class="btn btn-default float-right">Not Completed</a>  -->
+              <!-- <input type="button" class="btn btn-warning" value="Clear"> -->
+              
+              
               <table class="table table-dark">
 
                 <th> ID</th>

@@ -14,21 +14,16 @@ class CreateConsumersTable extends Migration
     public function up()
     {
         Schema::create('consumers', function (Blueprint $table) {
-            table>increments('id');
-            table>string('email');
-            table>string('consumername');
-            table>string('nic')->uniue();
-            table>string('contact');
-            table>string('Address');
-            table>timestamps();
-        //     $table->increments('id');
-        //    $table->string('nic')->unique();
-          
-        //     $table->string('consumername');
-        //     $table->string('email');
-        //     $table->string('contact');
-        //     $table->string('address');
+            $table->bigIncrements('id');
+            $table->string('email');
+            $table->string('consumername');
+            $table->string('nic')->unique();
+            $table->string('contact');
+            $table->string('Address');
+            $table->string('totaldueamount');
+           
             
+            $table->timestamps();
         });
     }
 

@@ -1,8 +1,8 @@
-@extends('layouts.master')
+@extends('layouts.masterconsumer')
 
 
 @section('title')
-Payment
+Meter
 @endsection
 
 @section('content')
@@ -11,9 +11,7 @@ Payment
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                
-                <h4 class="card-title"> Payments</h4>
-              
+                <h4 class="card-title"> Meter Readings</h4>
                 @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
@@ -38,7 +36,7 @@ Payment
               @endforeach
 
               
-              <form method="post" action="/searchpayment">
+              <form method="post" action="/searchmeter">
             
               {{csrf_field()}}
               <input type="text" class="form-control" name="AccountNo" placeholder="Enter Account No to search bill history ">
@@ -47,10 +45,10 @@ Payment
 
              
               <input type="submit" class="btn btn-success float-left" value="Search">
-              <a href="/payment" class="btn btn-default float-left">All Records</a> 
-              <a href="/payment-add" class="btn btn-info float-right"><i class="now-ui-icons ui-1_simple-add">&nbsp Add new payment</i></a>  
+              <a href="/meterreading" class="btn btn-default float-left">All Records</a> 
+              <a href="/meter-add" class="btn btn-info float-right"><i class="now-ui-icons ui-1_simple-add">&nbsp Add new meter reading</i></a>  
                
-              <br>
+               <br>
                    
                <br>
               </form><br>
@@ -60,27 +58,28 @@ Payment
                
                 <th> ID</th>
                 <th> Account No</th>
-                <th>Bill ID</th>
-                <th>Paid value</th>
-                <th> Date</th>
+                <th>Month</th>
+                <th> Current reading</th>
+                <th> date</th>
                 <!-- <th> contact</th> -->
                 <th>Action</th>
                 
 
-                @foreach($payments as $bh)
+                @foreach($meters as $bh)
                 <tr>
                
                 <td>{{$bh->id}}</td>
                 <td>{{$bh->accountno}}</td>
-                <td>{{$bh->billid}}</td>
-                <td>{{$bh->payment}}</td>
+                <td>{{$bh->month}}</td>
+                <td>{{$bh->Current_reading}}</td>
                 <td>{{$bh->date}}</td>
                 
                 <td>
 
                 
-                <form action="/payment-delete/{{$bh->id}}" method="POST">
-                <a href="/payment-edit/{{$bh->id}}"  class="btn btn-warning text-center"><i class="now-ui-icons design-2_ruler-pencil"></i> &nbsp Edit</a>
+                <form action="/meter-delete/{{$bh->id}}" method="POST">
+                <!-- <a href="" class="btn btn-info text-center"><i class="now-ui-icons ui-1_simple-add"></i></a>   -->
+                <a href="/meter-edit/{{$bh->id}}" class="btn btn-warning text-center"><i class="now-ui-icons design-2_ruler-pencil"></i> &nbsp Edit</a>
                 <!-- <a href="/billhistory-delete/{{$bh->id}}" class="btn btn-danger text-center"><i class="now-ui-icons ui-1_simple-remove"></i></a> -->
                 
                           {{csrf_field()}}

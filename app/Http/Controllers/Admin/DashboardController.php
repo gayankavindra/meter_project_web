@@ -259,20 +259,20 @@ class DashboardController extends Controller
          $account = Payment::find($id);
        
          $account->accountno=$request->input('accountno');
-         $account->billid=$request->input('bill id');
-         $account->payment=$request->input('meterreading');
+         $account->billid=$request->input('billid');
+         $account->payment=$request->input('payment');
          $account->date=$request->input('date');
         //  $users->usertype=$request->input('usertype');
         $account->update();
         
-         return redirect('/meterreading')->with('status','Your data is updated');
+         return redirect('/payment')->with('status','Your data is updated');
      }
 
      public function paymentdelete($id){
          $bill = Payment::findOrFail($id);
          $bill->delete();
         
-         return redirect('/meterreading')->with('status','Data is deleted');
+         return redirect('/payment')->with('status','Data is deleted');
      }
 
 
@@ -282,7 +282,41 @@ class DashboardController extends Controller
 
 
 
+     public function paymentsave(Request $request){   
+        // INSERT INTO `payments` (`id`, `accountno`, `billid`, `payment`, `date`, `created_at`, `updated_at`) VALUES (NULL, '344', '311', '750', '2019-10-01', NULL, NULL);
+        $this->validate($request,[
+            'accountno' =>'required'
+        ]);
+       $payment=new Payment([
+        `accountno` => $request->get('accountno'),
+        `billid`=> $request->get('billid`'),
+        `payment`=> $request->get('payment'),
+         `date` => $request->get('date')
+       ]);
+       //dd($payment);
+       $payment->save();
+       
+        return redirect('/payment')->with('status','Your data is added');
+    }
 
+    public function accountsave(Request $request){   
+        // INSERT INTO `payments` (`id`, `accountno`, `billid`, `payment`, `date`, `created_at`, `updated_at`) VALUES (NULL, '344', '311', '750', '2019-10-01', NULL, NULL);
+        $this->validate($request,[
+            'accountno' =>'required'
+        ]);
+       $account=new AccountInformation([
+        `accountno` => $request->get('accountno'),
+        `consumername`=> $request->get('consumername`'),
+        `contact`=> $request->get('contact'),
+         `Address` => $request->get('address'),
+         `totaldueamount` => $request->get('totaldueamount'),
+         `nic` => $request->get('nic')
+       ]);
+       dd($account);
+       //$payment->save();
+       
+       // return redirect('/payment')->with('status','Your data is added');
+    }
 
 
 

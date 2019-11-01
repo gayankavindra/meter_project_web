@@ -46,7 +46,9 @@ Bill History
              
               <input type="submit" class="btn btn-success float-left" value="Search">
               <a href="/BillHistory" class="btn btn-default float-left">All Records</a> 
-               <br>
+              <a href="/Billhistory-add" class="btn btn-info float-right"><i class="now-ui-icons ui-1_simple-add">&nbsp Add new Bill</i></a>  
+               
+              <br>
                    
                <br>
               </form><br>
@@ -76,13 +78,13 @@ Bill History
 
                 
                 <form action="/billhistory-delete/{{$bh->id}}" method="POST">
-                <a href="" class="btn btn-info text-center"><i class="now-ui-icons ui-1_simple-add"></i></a>  
-                <a href="/bill-edit/{{$bh->id}}" class="btn btn-warning text-center"><i class="now-ui-icons design-2_ruler-pencil"></i></a>
+                <!-- <a href="" class="btn btn-info text-center"><i class="now-ui-icons ui-1_simple-add"></i></a>   -->
+                <a href="/bill-edit/{{$bh->id}}" class="btn btn-warning text-center"><i class="now-ui-icons design-2_ruler-pencil"></i>&nbsp Edit</a>
                 <!-- <a href="/billhistory-delete/{{$bh->id}}" class="btn btn-danger text-center"><i class="now-ui-icons ui-1_simple-remove"></i></a> -->
                 
                           {{csrf_field()}}
                           {{method_field('DELETE')}}                        
-                         <button type="submit" class="btn btn-danger"><i class="now-ui-icons ui-1_simple-remove"></i></button>         
+                         <button type="submit" class="btn btn-danger"><i class="now-ui-icons ui-1_simple-remove"></i>&nbsp Delete</button>         
                 </form>
                 
                 </td>
